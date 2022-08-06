@@ -1,10 +1,7 @@
 package org.apache.hadoop.hive.serde2.objectinspector.primitive;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 import org.apache.hadoop.hive.serde2.io.ByteWritable;
 import org.apache.hadoop.hive.serde2.io.DoubleWritable;
@@ -21,6 +18,7 @@ import org.apache.hadoop.hive.serde2.objectinspector.primitive.LongObjectInspect
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorUtils;
 import org.apache.hadoop.hive.serde2.typeinfo.PrimitiveTypeInfo;
+import org.apache.hadoop.io.IntWritable;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -33,7 +31,7 @@ public class TestOI {
 //        testPrimitiveOI();
 
         //测试 根据Struct类型的ObjectInspector实例，获取基本类型数据
-        testStructOI();
+//        testStructOI();
         //测试 根据List类型的ObjectInspector实例，获取基本类型数据
         testListOI();
         //测试 根据Map类型的ObjectInspector实例，获取基本类型数据
@@ -67,9 +65,6 @@ public class TestOI {
         System.out.println(" 获取 typeName " + typeName);
 
 
-
-
-
         ObjectInspector.Category category = poi.getCategory();
         //  类别有 PRIMITIVE, LIST, MAP, STRUCT, UNION
         System.out.println(" 获取 category " + category);
@@ -88,8 +83,6 @@ public class TestOI {
         // 测试set 方法
         DoubleWritable obj = new DoubleWritable();
         assertEquals((double) 12, javaDoubleObjectInspector.set(obj, 12));
-
-//        javaDoubleObjectInspector.set
 
 
         // 表示整个 numeric 的长度
@@ -111,14 +104,37 @@ public class TestOI {
         double value = PrimitiveObjectInspectorUtils.getDouble(p, poi);
         //3.或者通过基本类型OI实例解析参数值
         double value1 = ((DoubleObjectInspector) poi).get(p);
-        int intValue = ((IntObjectInspector) poi).get(p);
 
-        System.out.println("PrimitiveObjectInspector: " + value + " or value1: " + value1 + "intValue: " +intValue);
+        System.out.println("PrimitiveObjectInspector: " + value + " or value1: " + value1 + "intValue: " );
+
+    }
+
+    @Test
+    public void testIntOI(){
+
+        WritableIntObjectInspector writableIntObjectInspector = new WritableIntObjectInspector();
+
+        IntWritable intWritable = new IntWritable();
+        Object set = writableIntObjectInspector.set(intWritable, 12);
+
+        // get 返回的是Object, 可以强制转换成其他类型
+        int i = intWritable.get();
+        System.out.println("intWriteable: " + intWritable);
+
+        double j;
+
+        // get 返回的是Object, 可以强制转换成其他类型，这里是double 类型
+
+        j = intWritable.get();
+
+        System.out.println("double: "+ j);
+
     }
 
     //测试 根据Struct类型的ObjectInspector实例，获取基本类型数据
     //注：Struct是对基本类型数据的封装
-    public static void testStructOI() {
+    @Test
+    public  void testStructOI() {
         //第一部分：全局变量初始化
         //1.实例化structObjectInspector
         //1.1.Struct结构中各参数Field的 类型（Java型）指定，存放list中（也可以是Hive支持的Writable型）
@@ -164,6 +180,37 @@ public class TestOI {
 
         System.out.println("struct {count:" + count + ", sum:" + sum + "}");
     }
+
+
+    @Test
+    public void testStructOI2(){
+        ArrayList<ObjectInspector> foi = new ArrayList<ObjectInspector>();
+        foi.add(PrimitiveObjectInspectorFactory.javaLongObjectInspector);
+        foi.add(PrimitiveObjectInspectorFactory.javaDoubleObjectInspector);
+        ArrayList<String> fname = new ArrayList<String>();
+        fname.add("count");
+        fname.add("sum");
+        StructObjectInspector soi =
+                ObjectInspectorFactory.getStandardStructObjectInspector(
+                        fname, foi);
+
+        List<? extends StructField> allStructFieldRefs = soi.getAllStructFieldRefs();
+        // MyField 是 StructField 的实现类
+        // protected int fieldID;
+        // protected String fieldName;
+        // protected ObjectInspector fieldObjectInspector;
+        // protected String fieldComment;
+        StructField structField = allStructFieldRefs.get(0); // allStructFieldRefs 里面存的structField
+
+        System.out.println(" 获取所有字段 :" + soi.getAllStructFieldRefs());
+
+        StructField count = soi.getStructFieldRef("count");
+        System.out.println("count 字段名称:"+ count.getFieldName());
+        System.out.println("count 字段id:"+ count.getFieldID());
+        System.out.println("count 字段类型检查器:"+ count.getFieldObjectInspector());
+
+    }
+
 
     //测试 根据List类型的ObjectInspector实例，获取基本类型数据
     //注：List是对基本类型数据的封装
