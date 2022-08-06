@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.hadoop.hive.serde2.objectinspector.primitive.WritableDoubleObjectInspector</OriginalElement>
+  <nodes>
+    <node x="-146.0" y="206.0">org.apache.hadoop.hive.serde2.objectinspector.StandardStructObjectInspector</node>
+    <node x="550.8614130434783" y="362.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.WritableDoubleObjectInspector</node>
+    <node x="380.25" y="128.0">org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector</node>
+    <node x="1049.1114130434783" y="128.0">org.apache.hadoop.hive.serde2.objectinspector.MapObjectInspector</node>
+    <node x="1350.1114130434783" y="128.0">org.apache.hadoop.hive.serde2.objectinspector.ListObjectInspector</node>
+    <node x="169.0" y="206.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveObjectInspector</node>
+    <node x="729.1114130434783" y="284.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.SettableDoubleObjectInspector</node>
+    <node x="1314.6114130434783" y="206.0">org.apache.hadoop.hive.serde2.objectinspector.StandardListObjectInspector</node>
+    <node x="213.875" y="362.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaDoubleObjectInspector</node>
+    <node x="1013.6114130434783" y="206.0">org.apache.hadoop.hive.serde2.objectinspector.StandardMapObjectInspector</node>
+    <node x="-33.88858695652175" y="284.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveJavaObjectInspector</node>
+    <node x="-110.5" y="128.0">org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector</node>
+    <node x="407.7228260869565" y="50.0">org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector</node>
+    <node x="333.11141304347825" y="284.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveWritableObjectInspector</node>
+    <node x="423.2228260869565" y="-38.0">java.lang.Cloneable</node>
+    <node x="761.6114130434783" y="206.0">org.apache.hadoop.hive.serde2.objectinspector.primitive.DoubleObjectInspector</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.DoubleObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="877.6114130434783" y="181.0" />
+      <point x="564.0" y="181.0" />
+      <point x="61.25" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.StandardListObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.ListObjectInspector" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveWritableObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveObjectInspector" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="521.1114130434783" y="259.0" />
+      <point x="324.5" y="259.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaDoubleObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveJavaObjectInspector" relationship="GENERALIZATION">
+      <point x="-67.0" y="-14.0" />
+      <point x="280.875" y="342.0" />
+      <point x="139.61141304347825" y="342.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.MapObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1154.1114130434783" y="98.0" />
+      <point x="539.7228260869565" y="98.0" />
+      <point x="44.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveJavaObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveObjectInspector" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="139.61141304347825" y="259.0" />
+      <point x="324.5" y="259.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1.5" y="108.0" />
+      <point x="451.7228260869565" y="108.0" />
+      <point x="-44.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.StandardStructObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.WritableDoubleObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.SettableDoubleObjectInspector" relationship="REALIZATION">
+      <point x="74.25" y="-14.0" />
+      <point x="773.6114130434783" y="342.0" />
+      <point x="877.6114130434783" y="342.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.SettableDoubleObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.DoubleObjectInspector" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="502.75" y="108.0" />
+      <point x="1154.1114130434783" y="108.0" />
+      <point x="1154.1114130434783" y="98.0" />
+      <point x="539.7228260869565" y="98.0" />
+      <point x="44.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="324.5" y="181.0" />
+      <point x="441.5" y="181.0" />
+      <point x="-61.25" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.StandardMapObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.MapObjectInspector" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaDoubleObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.SettableDoubleObjectInspector" relationship="REALIZATION">
+      <point x="67.0" y="-14.0" />
+      <point x="414.875" y="342.0" />
+      <point x="877.6114130434783" y="342.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector" target="java.lang.Cloneable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.ListObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1452.6114130434783" y="108.0" />
+      <point x="1154.1114130434783" y="108.0" />
+      <point x="1154.1114130434783" y="98.0" />
+      <point x="539.7228260869565" y="98.0" />
+      <point x="44.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.hadoop.hive.serde2.objectinspector.primitive.WritableDoubleObjectInspector" target="org.apache.hadoop.hive.serde2.objectinspector.primitive.AbstractPrimitiveWritableObjectInspector" relationship="GENERALIZATION">
+      <point x="-74.25" y="-14.0" />
+      <point x="625.1114130434783" y="332.0" />
+      <point x="521.1114130434783" y="332.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7666476949345475" showDependencies="false" x="732.5" y="205.8812175204157" />
+  <SelectedNodes>
+    <node>org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

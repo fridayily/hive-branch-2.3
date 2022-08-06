@@ -1,0 +1,17 @@
+Release Notes - Hive - Version 2.3.8
+
+
+
+** Bug
+    * [HIVE-23980] - Shade guava from existing Hive versions
+    * [HIVE-24512] - Exclude calcite in packaging Hive
+    * [HIVE-22708] - Fix for HttpTransport to replace String.equals
+
+** Improvement
+    * [HIVE-24324] - Remove deprecated API usage from Avro
+    * [HIVE-24379] - Backport HIVE-19662 to branch-2.3
+    * [HIVE-24436] - Fix Avro NULL_DEFAULT_VALUE compatibility issue
+
+** Test
+    * [HIVE-23323] - Add qsplits profile
+    * [HIVE-24035] - Add Jenkinsfile for branch-2.3
