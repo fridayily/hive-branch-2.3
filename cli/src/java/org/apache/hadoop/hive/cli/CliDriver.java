@@ -683,12 +683,15 @@ public class CliDriver {
   }
 
   public static void main(String[] args) throws Exception {
-    int ret = new CliDriver().run(args);
+//    args[0]="select 1";
+    String[] myargs = new String[1];
+    myargs[0]="select 1";
+
+    int ret = new CliDriver().run(myargs);
     System.exit(ret);
   }
 
   public  int run(String[] args) throws Exception {
-
     OptionsProcessor oproc = new OptionsProcessor();
     if (!oproc.process_stage1(args)) {
       return 1;

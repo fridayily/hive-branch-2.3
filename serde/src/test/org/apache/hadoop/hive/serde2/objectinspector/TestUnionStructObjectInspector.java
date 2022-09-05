@@ -73,11 +73,11 @@ public class TestUnionStructObjectInspector extends TestCase {
       List<? extends StructField> fields = usoi1.getAllStructFieldRefs();
       assertEquals(5, fields.size());
       for (int i = 0; i < 5; i++) {
-        if (i <= 2) {
+        if (i <= 2) { // 判断前3个对象
           assertEquals(fieldNames1.get(i).toLowerCase(), fields.get(i)
-              .getFieldName());
+              .getFieldName()); // 判断 字段名 是否相等
           assertEquals(fieldObjectInspectors1.get(i), fields.get(i)
-              .getFieldObjectInspector());
+              .getFieldObjectInspector()); // 判断对象检查器
         } else {
           assertEquals(fieldNames2.get(i - 3).toLowerCase(), fields.get(i)
               .getFieldName());

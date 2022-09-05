@@ -39,8 +39,10 @@ public class TestObjectInspectorFactory extends TestCase {
 
         System.out.println("((DoubleObjectInspector) poi).get(p) " + value1);
 
-
     }
+
+
+
 
     //测试 根据Struct类型的ObjectInspector实例，获取基本类型数据
     //注：Struct是对基本类型数据的封装

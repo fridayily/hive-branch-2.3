@@ -34,6 +34,7 @@ public class TestWritableDoubleObjectInspector extends TestCase {
         System.out.println("writableDoubleObjectInspector  getPrimitiveWritableObject to string " + primitiveWritableObject.toString());
 
         System.out.println("o " + doubleWritable.hashCode());
+        // copy doubleWritable
         Object o = writableDoubleObjectInspector.copyObject(doubleWritable);
         System.out.println("o " + o);
         System.out.println("o " + o.getClass());
@@ -68,8 +69,7 @@ public class TestWritableDoubleObjectInspector extends TestCase {
 
 
         double v2 = inDoubleWritable.get();
-        System.out.println("v2 "+v2);
-
+        System.out.println("v2 " + v2);
 
 
     }
